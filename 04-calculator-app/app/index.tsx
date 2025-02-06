@@ -4,13 +4,16 @@ import { globalStyles } from "@/styles/global-styles";
 import ThemeText from "@/components/ThemeText";
 import CalculatorButton from "@/components/CalculatorButton";
 import { Colors } from "@/constants/Colors";
+import { useCalculator } from "@/hooks/useCalculator";
 
 const CalculatorApp = () => {
+  const { formula } = useCalculator();
+
   return (
     <View style={globalStyles.calculatorContainer}>
       {/* Resultados */}
       <View style={{ paddingHorizontal: 30, paddingBottom: 20 }}>
-        <ThemeText variant="h1">50 x 5000</ThemeText>
+        <ThemeText variant="h1">{formula}</ThemeText>
         <ThemeText variant="h2">2500</ThemeText>
       </View>
 
@@ -38,7 +41,7 @@ const CalculatorApp = () => {
         <CalculatorButton
           label="÷"
           color={Colors.orange}
-          onPress={() => console.log("÷ blackText")}
+          onPress={() => console.log("÷")}
         ></CalculatorButton>
       </View>
 
