@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Slot, SplashScreen } from "expo-router";
+import { Slot, SplashScreen, Stack } from "expo-router";
 import "../global.css";
 import { useFonts } from "expo-font";
 
@@ -21,6 +21,7 @@ const RootLayout = () => {
   if (!fontsLoaded && !error) return null; // You can also return a loading indicator here
 
   return <Slot />;
+  //return <Stack />;
 };
 
 export default RootLayout;
